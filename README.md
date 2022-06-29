@@ -16,3 +16,7 @@ Ve windows netestováno (pro Visual Studio by měl fungovat soubor s projektem T
 v souboru Controllers/SendSMSController.cs potřeba změnit cestu souboru k souboru s daty "SendSMS.txt"
  
 V linuxu stačí ve složce "Test" příkaz $dotnet run
+
+# Poznámky
+
+Ǔloha řešena od 23.6.2022 bez předchozí zkušenosti s ASP.NET a modelu MVC.
