@@ -19,4 +19,4 @@ V linuxu stačí ve složce "Test" příkaz $dotnet run
 
 # Poznámky
 
-Ǔloha řešena od 23.6.2022 bez předchozí zkušenosti s ASP.NET a modelu MVC.
+Ǔloha řešena od 23.6.2022 bez předchozích zkušeností s ASP.NET, s modelem MVC a s vývojem .NET aplikací v Linuxu.
