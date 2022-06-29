@@ -13,7 +13,7 @@ Jazyk C#, framework .NET Core 3.1 nebo .NET 5 nebo .NET 6 (podle vlastní prefer
 
 Ve windows netestováno (pro Visual Studio by měl fungovat soubor s projektem Test.sln)
 
-v souboru Controllers/SendSMSController.cs potřeba změnit cestu souboru k souboru s daty "SendSMS.txt"
+v souboru Controllers/SendSMSController.cs je potřeba změnit cestu k souboru s daty "SendSMS.txt"
  
 V linuxu stačí ve složce "Test" příkaz $dotnet run
 
