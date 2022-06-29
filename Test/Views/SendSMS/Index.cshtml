@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Send SMS Page";
+}
+<h1>@ViewData["Title"]</h1>
+
+@model SendSMS
+<form method="GET">
+	<div class="border p-3 mt-4">
+		<div class="row pb-2">
+			<h2 class="text-primary">Send SMS Form</h2>
+			<hr />
+		</div>
+		<div class="mb-3">
+			<label asp-for="PhoneNumber"></label>
+			<input asp-for="PhoneNumber" class="form-control" />
+		</div>
+		<div class="mb-3">
+			<label asp-for="SMSText"></label>
+			<input asp-for="SMSText" class="form-control" />
+		</div>
+		<button type="submit" class="btn btn-primary" style="width:150px">Send SMS</button>
+	</div>
+</form>
