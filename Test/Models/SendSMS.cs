@@ -12,7 +12,8 @@ namespace Test.Models
 
         [Display(Name = "SMS text")]
         [StringLength(320)]
-       // [RegularExpression(@"\x00-\x7F")] //mělo by být povolení jen Ascii7, nefunguje
+       // [RegularExpression(@"[\x00-\x7F]")] //povolení jen Ascii7, chyběly hranaté závorky, zkusit odkomentovat
+        // kdyby pořád nešlo, tak zkusit tohle: [ -~] a v nejhorším povolit písmema, čísla a zbytek doplnit 
         public string? SMSText { get; set; }
     }
 }
