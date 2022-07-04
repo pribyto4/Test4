@@ -25,7 +25,7 @@ public class SendSMSController : Controller
                     obj.PhoneNumber = obj.PhoneNumber.Substring(1, obj.PhoneNumber.Length-1);
                 }
                 //write data in File
-                string FilePath = "/media/tom/rychlý data/Dokumenty/Tomáš/PRG Linux/Programy - .NET/Test4_4 MVC dotnet6.0 generovaný/Test/Data/SendSMS.txt";
+                string FilePath = "/media/tom/rychlý data/Dokumenty/Tomáš/PRG Linux/Programy - .NET/Test4/Test/Data/SendSMS.txt";
                 object Text = obj.PhoneNumber + "," + obj.SMSText;
                 Helpers.FileUtil.AddLine(FilePath, Text);
             }

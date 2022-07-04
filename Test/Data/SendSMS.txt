@@ -1,2 +1,6 @@
 420123456789,test
 420123222333,ahoj
+123456,asdadssdf5646545TSDF
+123456789,qwertzuiop()!*+,-./ 0123456789=><?{}[]:;@"^_~|`'#&$%
+123456789,jkhgfruzhdfghijsdfkjkka0215404ds65406d5sf4564a0d6a54sadf5640sd6f4as6df4a6df46a5s4df06s4df654sf0d654f06a54sdf064gh6f4j6z4k4ghk4gh6jk4h4j6ghk4ghjk54hjkgh56jk046jk46hgj4k69gh84jk0j6gh54jk06hjk46gh8jk406ghjk46gh5jk46jk04gh56jk65ghk465gh4jk65hg4jk56gh4jk6j06g5h4jk6j0456hg4jkgh564jk65gh4jk65h4jk6546ghk546g5hjk465g4hjk64gh50k
+420777888999,toto je test sms s ascii7 - povolene znaky .,/(){}-`~@#$%^&* a mnoho dalsich
