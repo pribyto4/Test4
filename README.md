@@ -13,9 +13,9 @@ Jazyk C#, framework .NET Core 3.1 nebo .NET 5 nebo .NET 6 (podle vlastní prefer
 
 Ve windows netestováno (pro Visual Studio by měl fungovat soubor s projektem Test.sln)
 
-v souboru Controllers/SendSMSController.cs je potřeba změnit cestu k souboru s daty "SendSMS.txt"
+V linuxu nainstalovat MS SQL: https://docs.microsoft.com/en-us/sql/linux/quickstart-install-connect-ubuntu?view=sql-server-ver15
  
-V linuxu stačí ve složce "Test" příkaz $dotnet run
+V linuxu ve složce "Test" spustit příkaz $dotnet run
 
 # Poznámky
 
