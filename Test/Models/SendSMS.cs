@@ -5,6 +5,7 @@ namespace Test.Models
 {
     public class SendSMS
     {
+        [Key]
         [Display(Name = "Phone number (with Country prefix)")]
         [RegularExpression(@"[0-9]+|^\+[0-9]+", ErrorMessage = "Must be digits.")]
         [MaxLength(16, ErrorMessage = "Maximum length is 16")]

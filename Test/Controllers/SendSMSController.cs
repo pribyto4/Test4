@@ -2,11 +2,18 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Test.Models;
 using Test.Helpers;
+using Test.Data;
 
 namespace Test.Controllers;
 
 public class SendSMSController : Controller
 {
+    private readonly SMSContext _context;
+
+    public SendSMSController(SMSContext context)
+    {
+        _context = context;
+    }
 
     public IActionResult Index()
     {
@@ -14,28 +21,23 @@ public class SendSMSController : Controller
     }
 
     [HttpGet]
-    public IActionResult Index(SendSMS obj)
+    public async Task<IActionResult> Index([Bind("PhoneNumber,SMSText")] SendSMS sendSMS)
     {
         if (ModelState.IsValid)
         {
-            if (obj.PhoneNumber != null)
+            if (sendSMS.PhoneNumber != null)
             {
-                if (obj.PhoneNumber[0] == '+')
+                if (sendSMS.PhoneNumber[0] == '+')
                 {
-                    obj.PhoneNumber = obj.PhoneNumber.Substring(1, obj.PhoneNumber.Length-1);
+                    sendSMS.PhoneNumber = sendSMS.PhoneNumber.Substring(1, sendSMS.PhoneNumber.Length - 1);
                 }
-                //write data in File
-                string FilePath = "/media/tom/rychlý data/Dokumenty/Tomáš/PRG Linux/Programy - .NET/Test4/Test/Data/SendSMS.txt";
-                object Text = obj.PhoneNumber + "," + obj.SMSText;
-                Helpers.FileUtil.AddLine(FilePath, Text);
+                _context.Add(sendSMS);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
             }
-
-            return View(obj);
         }
-        else
-        {
-            return View();
-        }
+        return View(sendSMS);
     }
+
 
 }

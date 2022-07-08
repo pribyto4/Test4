@@ -1,4 +1,11 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Test.Data;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<SMSContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("SMSContext")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
