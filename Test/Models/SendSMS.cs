@@ -3,9 +3,11 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Test.Models
 {
+   // [Keyless] nefunguje
     public class SendSMS
     {
-        [Key]
+        public int Id { get; set; }
+
         [Display(Name = "Phone number (with Country prefix)")]
         [RegularExpression(@"[0-9]+|^\+[0-9]+", ErrorMessage = "Must be digits.")]
         [MaxLength(16, ErrorMessage = "Maximum length is 16")]

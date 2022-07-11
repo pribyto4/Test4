@@ -11,7 +11,7 @@ using Test.Data;
 namespace Test.Migrations
 {
     [DbContext(typeof(SMSContext))]
-    [Migration("20220708174148_InitialCreate")]
+    [Migration("20220711210121_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,6 +25,12 @@ namespace Test.Migrations
 
             modelBuilder.Entity("Test.Models.SendSMS", b =>
                 {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
                     b.Property<string>("PhoneNumber")
                         .HasMaxLength(16)
                         .HasColumnType("nvarchar(16)");
@@ -33,7 +39,7 @@ namespace Test.Migrations
                         .HasMaxLength(320)
                         .HasColumnType("nvarchar(320)");
 
-                    b.HasKey("PhoneNumber");
+                    b.HasKey("Id");
 
                     b.ToTable("SendSMS");
                 });

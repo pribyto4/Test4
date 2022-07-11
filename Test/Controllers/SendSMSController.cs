@@ -21,7 +21,7 @@ public class SendSMSController : Controller
     }
 
     [HttpGet]
-    public async Task<IActionResult> Index([Bind("PhoneNumber,SMSText")] SendSMS sendSMS)
+    public async Task<IActionResult> Index([Bind("Id,PhoneNumber,SMSText")] SendSMS sendSMS)
     {
         if (ModelState.IsValid)
         {

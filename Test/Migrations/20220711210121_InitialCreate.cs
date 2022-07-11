@@ -12,12 +12,14 @@ namespace Test.Migrations
                 name: "SendSMS",
                 columns: table => new
                 {
-                    PhoneNumber = table.Column<string>(type: "nvarchar(16)", maxLength: 16, nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    PhoneNumber = table.Column<string>(type: "nvarchar(16)", maxLength: 16, nullable: true),
                     SMSText = table.Column<string>(type: "nvarchar(320)", maxLength: 320, nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_SendSMS", x => x.PhoneNumber);
+                    table.PrimaryKey("PK_SendSMS", x => x.Id);
                 });
         }
 

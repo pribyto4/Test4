@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Test.Models;
 
 namespace Test.Data
 {

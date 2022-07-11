@@ -23,6 +23,12 @@ namespace Test.Migrations
 
             modelBuilder.Entity("Test.Models.SendSMS", b =>
                 {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
                     b.Property<string>("PhoneNumber")
                         .HasMaxLength(16)
                         .HasColumnType("nvarchar(16)");
@@ -31,7 +37,7 @@ namespace Test.Migrations
                         .HasMaxLength(320)
                         .HasColumnType("nvarchar(320)");
 
-                    b.HasKey("PhoneNumber");
+                    b.HasKey("Id");
 
                     b.ToTable("SendSMS");
                 });
