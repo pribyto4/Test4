@@ -4,16 +4,19 @@
 <h1>@ViewData["Title"]</h1>
 
 @model SendSMS
-<form method="GET">
+<form id="sendSMS" name="sendSMSForm" method="GET" onsubmit="process(event)">
 	<div class="border p-3 mt-4">
 		<div class="row pb-2">
 			<h2 class="text-primary">Send SMS Form</h2>
 			<hr />
 		</div>
 		<div class="mb-3">
-			<label asp-for="PhoneNumber"></label>
-			<input asp-for="PhoneNumber" class="form-control" />
+			<label asp-for="PhoneNumber" style="width: 100%"></label>
+			<input asp-for="PhoneNumber" type="hidden" class="form-control" id="PhoneNumberInput" />
 			<span asp-validation-for="PhoneNumber" class="text-danger"></span>
+			<input class="form-control" id="PhoneNumberBeforeJSConverting" />
+			<div class="text-success valid-msg" style="display: none;"></div>
+			<div class="text-danger error-msg" style="display: none;"></div>
 		</div>
 		<div class="mb-3">
 			<label asp-for="SMSText"></label>
@@ -23,3 +26,18 @@
 		<button type="submit" class="btn btn-primary" style="width:150px">Send SMS</button>
 	</div>
 </form>
+
+@section scripts{
+<script>
+const iti = phoneInput("PhoneNumberBeforeJSConverting","valid-msg","error-msg");
+
+function process(event) {
+    event.preventDefault();
+    if (iti.isValidNumber()) {
+        const phoneNumber = iti.getNumber();
+        document.getElementById("PhoneNumberInput").value = phoneNumber;
+        document.sendSMSForm.submit();
+    }
+}
+</script>
+}
