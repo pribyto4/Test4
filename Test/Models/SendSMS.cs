@@ -9,7 +9,7 @@ namespace Test.Models
         public int Id { get; set; }
 
         [Display(Name = "Phone number")]
-        [RegularExpression(@"[0-9]+|^\+[0-9]+", ErrorMessage = "Must be digits.")]
+        [RegularExpression(@"^\+[0-9]+", ErrorMessage = "Must be digits.")]
         [MaxLength(16, ErrorMessage = "Maximum length is 16")]
         public string? PhoneNumber { get; set; } = null;
 

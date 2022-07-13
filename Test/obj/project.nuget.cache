@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ddtDsdzFipAPe9RaNEX4es4m67fUVlmtLeFHvzvqNEKcMeaigveSl/xlddbBRgXae9msUl7P6tVq9zQPkNWCiQ==",
+  "dgSpecHash": "6dY8G2cM6Rt4Nt6pnVd9H+QTHVWc9lh9QQFZu0U9Soz96cqzWCjQzjzEsTc7GuQUS68Fvmo+M1kvPi4WMDTn1A==",
   "success": true,
-  "projectFilePath": "/media/tom/rychlý data/Dokumenty/Tomáš/PRG Linux/Programy - .NET/Test4 (6)/Test/Test.csproj",
+  "projectFilePath": "/media/tom/rychlý data/Dokumenty/Tomáš/PRG Linux/Programy - .NET/Test4/Test/Test.csproj",
   "expectedPackageFiles": [
     "/home/tom/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/home/tom/.nuget/packages/messagepack/2.1.152/messagepack.2.1.152.nupkg.sha512",

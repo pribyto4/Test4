@@ -27,10 +27,6 @@ public class SendSMSController : Controller
         {
             if (sendSMS.PhoneNumber != null)
             {
-                if (sendSMS.PhoneNumber[0] == '+')
-                {
-                    sendSMS.PhoneNumber = sendSMS.PhoneNumber.Substring(1, sendSMS.PhoneNumber.Length - 1);
-                }
                 _context.Add(sendSMS);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));

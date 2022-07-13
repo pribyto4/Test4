@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/media/tom/rychlý data/Dokumenty/Tomáš/PRG Linux/Programy - .NET/Test4 (6)/Test/Test.csproj": {}
+    "/media/tom/rychlý data/Dokumenty/Tomáš/PRG Linux/Programy - .NET/Test4/Test/Test.csproj": {}
   },
   "projects": {
-    "/media/tom/rychlý data/Dokumenty/Tomáš/PRG Linux/Programy - .NET/Test4 (6)/Test/Test.csproj": {
+    "/media/tom/rychlý data/Dokumenty/Tomáš/PRG Linux/Programy - .NET/Test4/Test/Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/media/tom/rychlý data/Dokumenty/Tomáš/PRG Linux/Programy - .NET/Test4 (6)/Test/Test.csproj",
+        "projectUniqueName": "/media/tom/rychlý data/Dokumenty/Tomáš/PRG Linux/Programy - .NET/Test4/Test/Test.csproj",
         "projectName": "Test",
-        "projectPath": "/media/tom/rychlý data/Dokumenty/Tomáš/PRG Linux/Programy - .NET/Test4 (6)/Test/Test.csproj",
+        "projectPath": "/media/tom/rychlý data/Dokumenty/Tomáš/PRG Linux/Programy - .NET/Test4/Test/Test.csproj",
         "packagesPath": "/home/tom/.nuget/packages/",
-        "outputPath": "/media/tom/rychlý data/Dokumenty/Tomáš/PRG Linux/Programy - .NET/Test4 (6)/Test/obj/",
+        "outputPath": "/media/tom/rychlý data/Dokumenty/Tomáš/PRG Linux/Programy - .NET/Test4/Test/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/tom/.nuget/NuGet/NuGet.Config"

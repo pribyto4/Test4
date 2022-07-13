@@ -11,7 +11,7 @@ using Test.Data;
 namespace Test.Migrations
 {
     [DbContext(typeof(SMSContext))]
-    [Migration("20220711210121_InitialCreate")]
+    [Migration("20220713230943_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
