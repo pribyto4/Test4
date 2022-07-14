@@ -11,6 +11,18 @@
           "lib/netstandard2.0/Humanizer.dll": {}
         }
       },
+      "libphonenumber-csharp/8.12.51.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections.Immutable": "1.7.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/PhoneNumbers.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/PhoneNumbers.dll": {}
+        }
+      },
       "MessagePack/2.1.152": {
         "type": "package",
         "dependencies": {
@@ -3081,6 +3093,19 @@
         "lib/netstandard2.0/Humanizer.dll",
         "lib/netstandard2.0/Humanizer.xml",
         "logo.png"
+      ]
+    },
+    "libphonenumber-csharp/8.12.51.1": {
+      "sha512": "ea3oiTqwZL+Ud0K4cIsemOCkd9N0wi/rj39ccolSLFemHw3/phA3fq2FO+cGFxAs5KhBESh4TVVZT/ZiRnG+nQ==",
+      "type": "package",
+      "path": "libphonenumber-csharp/8.12.51.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/PhoneNumbers.dll",
+        "lib/netstandard2.0/PhoneNumbers.xml",
+        "libphonenumber-csharp.8.12.51.1.nupkg.sha512",
+        "libphonenumber-csharp.nuspec"
       ]
     },
     "MessagePack/2.1.152": {
@@ -9518,7 +9543,8 @@
       "Microsoft.EntityFrameworkCore.Design >= 6.0.0-rc.2.21465.1",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.0-rc.1.21452.10",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.0-rc.1.21452.10",
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.0-rc.1.21464.1"
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.0-rc.1.21464.1",
+      "libphonenumber-csharp >= 8.12.51.1"
     ]
   },
   "packageFolders": {
@@ -9527,11 +9553,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/media/tom/rychlý data/Dokumenty/Tomáš/PRG Linux/Programy - .NET/Test4/Test/Test.csproj",
+      "projectUniqueName": "/media/tom/rychlý data/Dokumenty/Tomáš/PRG Linux/Programy - .NET/Test4/Test4/Test/Test.csproj",
       "projectName": "Test",
-      "projectPath": "/media/tom/rychlý data/Dokumenty/Tomáš/PRG Linux/Programy - .NET/Test4/Test/Test.csproj",
+      "projectPath": "/media/tom/rychlý data/Dokumenty/Tomáš/PRG Linux/Programy - .NET/Test4/Test4/Test/Test.csproj",
       "packagesPath": "/home/tom/.nuget/packages/",
-      "outputPath": "/media/tom/rychlý data/Dokumenty/Tomáš/PRG Linux/Programy - .NET/Test4/Test/obj/",
+      "outputPath": "/media/tom/rychlý data/Dokumenty/Tomáš/PRG Linux/Programy - .NET/Test4/Test4/Test/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/tom/.nuget/NuGet/NuGet.Config"
@@ -9577,6 +9603,10 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "[6.0.0-rc.1.21464.1, )"
+          },
+          "libphonenumber-csharp": {
+            "target": "Package",
+            "version": "[8.12.51.1, )"
           }
         },
         "imports": [

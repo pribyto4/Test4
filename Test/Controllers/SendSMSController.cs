@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Test.Models;
 using Test.Helpers;
 using Test.Data;
+using PhoneNumbers;
 
 namespace Test.Controllers;
 
@@ -27,6 +28,17 @@ public class SendSMSController : Controller
         {
             if (sendSMS.PhoneNumber != null)
             {
+                string phoneNumber = sendSMS.PhoneNumber;
+                try
+                {
+                    PhoneNumber pn = PhoneNumberUtil.GetInstance().Parse(phoneNumber, "");
+                    sendSMS.PhoneNumber = PhoneNumberUtil.GetInstance().Format(pn, PhoneNumberFormat.E164); //INTERNATIONAL je s mezerama, E164 bez mezer
+                }
+                catch (NumberParseException npex)
+                {
+                    ModelState.AddModelError("NumberParseException", npex.Message);
+                    return View(sendSMS);
+                }
                 _context.Add(sendSMS);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -34,6 +46,4 @@ public class SendSMSController : Controller
         }
         return View(sendSMS);
     }
-
-
 }

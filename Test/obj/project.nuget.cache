@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "6dY8G2cM6Rt4Nt6pnVd9H+QTHVWc9lh9QQFZu0U9Soz96cqzWCjQzjzEsTc7GuQUS68Fvmo+M1kvPi4WMDTn1A==",
+  "dgSpecHash": "KrwXkD5dQAW3BBBnHkkVO3L9FqAcfllF1KpDIhMDtnpcSG/Usjc8CA+Ug84JOk/74BZBXf8CSZkL8A+Af5wCFg==",
   "success": true,
-  "projectFilePath": "/media/tom/rychlý data/Dokumenty/Tomáš/PRG Linux/Programy - .NET/Test4/Test/Test.csproj",
+  "projectFilePath": "/media/tom/rychlý data/Dokumenty/Tomáš/PRG Linux/Programy - .NET/Test4/Test4/Test/Test.csproj",
   "expectedPackageFiles": [
     "/home/tom/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
+    "/home/tom/.nuget/packages/libphonenumber-csharp/8.12.51.1/libphonenumber-csharp.8.12.51.1.nupkg.sha512",
     "/home/tom/.nuget/packages/messagepack/2.1.152/messagepack.2.1.152.nupkg.sha512",
     "/home/tom/.nuget/packages/messagepack.annotations/2.1.152/messagepack.annotations.2.1.152.nupkg.sha512",
     "/home/tom/.nuget/packages/messagepackanalyzer/2.1.152/messagepackanalyzer.2.1.152.nupkg.sha512",

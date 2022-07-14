@@ -3,6 +3,8 @@
 }
 <h1>@ViewData["Title"]</h1>
 
+@Html.ValidationSummary(true)
+
 @model SendSMS
 <form id="sendSMS" name="sendSMSForm" method="GET" onsubmit="process(event)">
 	<div class="border p-3 mt-4">
@@ -12,9 +14,11 @@
 		</div>
 		<div class="mb-3">
 			<label asp-for="PhoneNumber" style="width: 100%"></label>
-			<input asp-for="PhoneNumber" type="hidden" class="form-control" id="PhoneNumberInput" />
+			<input asp-for="PhoneNumber" class="form-control" id="PhoneNumberInput" /> @*with JS will be type="hidden"*@
 			<span asp-validation-for="PhoneNumber" class="text-danger"></span>
-			<input class="form-control" id="PhoneNumberBeforeJSConverting" />
+			<div class="text-danger">@Html.ValidationMessage("NumberParseException")</div>
+
+			<input class="form-control" style="display: none;" id="JSInput" /> @*in JSInput will be Phone Number before converting*@
 			<div class="text-success valid-msg" style="display: none;"></div>
 			<div class="text-danger error-msg" style="display: none;"></div>
 		</div>
@@ -29,15 +33,25 @@
 
 @section scripts{
 <script>
-const iti = phoneInput("PhoneNumberBeforeJSConverting","valid-msg","error-msg");
+	function setViewForJS() {
+		const JSInput = document.querySelector("#JSInput");
+		const PhoneNumberInput = document.querySelector("#PhoneNumberInput");
 
-function process(event) {
-    event.preventDefault();
-    if (iti.isValidNumber()) {
-        const phoneNumber = iti.getNumber();
-        document.getElementById("PhoneNumberInput").value = phoneNumber;
-        document.sendSMSForm.submit();
-    }
-}
+		JSInput.style.display = "";
+		PhoneNumberInput.type = "hidden";
+	}
+
+	setViewForJS();
+
+	const iti = phoneInput("JSInput", "valid-msg", "error-msg");
+
+	function process(event) {
+		event.preventDefault();
+		if (iti.isValidNumber()) {
+			const phoneNumber = iti.getNumber();
+			document.getElementById("PhoneNumberInput").value = phoneNumber;
+			document.sendSMSForm.submit();
+		}
+	}
 </script>
 }
