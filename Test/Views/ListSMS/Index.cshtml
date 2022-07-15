@@ -1,0 +1,33 @@
+@model IEnumerable<Test.Models.SendSMS>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Seznam odeslaných SMS</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PhoneNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SMSText)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SMSText)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
