@@ -32,7 +32,7 @@ public class SendSMSController : Controller
                 try
                 {
                     PhoneNumber pn = PhoneNumberUtil.GetInstance().Parse(phoneNumber, "");
-                    sendSMS.PhoneNumber = PhoneNumberUtil.GetInstance().Format(pn, PhoneNumberFormat.E164); //INTERNATIONAL je s mezerama, E164 bez mezer
+                    sendSMS.PhoneNumber = PhoneNumberUtil.GetInstance().Format(pn, PhoneNumberFormat.E164); //INTERNATIONAL is with spaces, E164 without
                 }
                 catch (NumberParseException npex)
                 {
@@ -41,6 +41,7 @@ public class SendSMSController : Controller
                 }
                 _context.Add(sendSMS);
                 await _context.SaveChangesAsync();
+                TempData["success"] = "SMS was sent successfully";
                 return RedirectToAction(nameof(Index));
             }
         }
