@@ -9,9 +9,9 @@ Požadavky:
 
 Jazyk C#, framework .NET Core 3.1 nebo .NET 5 nebo .NET 6 (podle vlastní preference) Přijatá data budou uložena v SQL databázi pro další zpracování Kód by mělo být možné integrovat do většího holdingového řešení
 
-# Ukázka řešení po commitu 4bad9a2678672884b01acb6fe4708f09266f47df:
+# Ukázka řešení:
 
-video: https://github.com/pribyto4/Test4/Test.flv
+video po commitu 4bad9a2678672884b01acb6fe4708f09266f47df: https://github.com/pribyto4/Test4/blob/main/Test.flv
 
 # Návod na zprovoznění:
 
