@@ -32,7 +32,7 @@ public class SendSMSController : Controller
                 try
                 {
                     PhoneNumber pn = PhoneNumberUtil.GetInstance().Parse(phoneNumber, "");
-                    sendSMS.PhoneNumber = PhoneNumberUtil.GetInstance().Format(pn, PhoneNumberFormat.E164); //INTERNATIONAL is with spaces, E164 without
+                    sendSMS.PhoneNumber = PhoneNumberUtil.GetInstance().Format(pn, PhoneNumberFormat.INTERNATIONAL); //INTERNATIONAL is with spaces, E164 without
                 }
                 catch (NumberParseException npex)
                 {
