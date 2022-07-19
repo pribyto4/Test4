@@ -8,14 +8,15 @@ namespace Test.Models
     {
         public int Id { get; set; }
 
+        [Required]
         [Display(Name = "Phone number")]
-        [RegularExpression(@"^\+(?:[0-9] ?){6,14}[0-9]$", ErrorMessage = "Must be international format.")]
         [MaxLength(16, ErrorMessage = "Maximum length is 16")]
-        public string? PhoneNumber { get; set; } = null;
+        public string PhoneNumber { get; set; }
 
+        [Required]
         [Display(Name = "SMS text")]
         [StringLength(320)]
         [RegularExpression(@"[\x00-\x7F]+", ErrorMessage = "Must be Ascii7 chars.")]
-        public string? SMSText { get; set; }
+        public string SMSText { get; set; }
     }
 }
