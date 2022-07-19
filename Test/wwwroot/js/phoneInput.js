@@ -1,9 +1,10 @@
 document.writeln("<script src='https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js'></script>");
 
-function phoneInput(idPhoneInput,divClassForValid,divClassForError){
+function phoneInput(idPhoneInput,divClassForValid,divClassForError,country){
 	var phoneInput = document.querySelector("#"+idPhoneInput);
 	const iti = window.intlTelInput(phoneInput, {
 		preferredCountries: ["cz"],
+		initialCountry: country,
 		separateDialCode: true,
 		utilsScript:
 			"https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js?1638200991544",

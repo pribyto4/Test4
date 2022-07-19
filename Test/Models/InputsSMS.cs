@@ -1,18 +1,24 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Test.Models
 {
-    public class SendSMS
+    public class InputsSMS
     {
         public int Id { get; set; }
 
         [Required]
         [Display(Name = "Phone number")]
-        [MaxLength(25)] //not found specifications of length in international format E123
-        [Column(TypeName = "varchar(25)")]
+        [MaxLength(25, ErrorMessage = "Maximum length is 25")]
         public string PhoneNumber { get; set; }
+
+        [Display(Name = "JSInput")]
+        [MaxLength(25, ErrorMessage = "Maximum length is 25")]
+        public string? JSInput { get; set; }
+
+        [Display(Name = "JSInputCounteryCode")]
+        [MaxLength(2, ErrorMessage = "Maximum length is 2")]
+        public string? JSInputCounteryCode { get; set; }
 
         [Required]
         [Display(Name = "SMS text")]

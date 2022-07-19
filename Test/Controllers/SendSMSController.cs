@@ -22,29 +22,33 @@ public class SendSMSController : Controller
     }
 
     [HttpGet]
-    public async Task<IActionResult> Index([Bind("Id,PhoneNumber,SMSText")] SendSMS sendSMS)
+    public async Task<IActionResult> Index([Bind("Id,PhoneNumber,JSInput,JSInputCounteryCode,SMSText")] InputsSMS inputsSMS)
     {
         if (ModelState.IsValid)
         {
-            if (sendSMS.PhoneNumber != null)
+            if (inputsSMS.PhoneNumber != null)
             {
-                string phoneNumber = sendSMS.PhoneNumber;
+                string PhoneNumberInternational;
                 try
                 {
-                    PhoneNumber pn = PhoneNumberUtil.GetInstance().Parse(phoneNumber, "");
-                    sendSMS.PhoneNumber = PhoneNumberUtil.GetInstance().Format(pn, PhoneNumberFormat.INTERNATIONAL); //INTERNATIONAL is with spaces, E164 without
+                    PhoneNumber pn = PhoneNumberUtil.GetInstance().Parse(inputsSMS.PhoneNumber, "");
+                    PhoneNumberInternational = PhoneNumberUtil.GetInstance().Format(pn, PhoneNumberFormat.INTERNATIONAL); //INTERNATIONAL is with spaces, E164 without
                 }
                 catch (NumberParseException npex)
                 {
                     ModelState.AddModelError("NumberParseException", npex.Message);
-                    return View(sendSMS);
+                    return View(inputsSMS);
                 }
+                SendSMS sendSMS = new SendSMS();
+                sendSMS.Id = inputsSMS.Id;
+                sendSMS.PhoneNumber = PhoneNumberInternational;
+                sendSMS.SMSText = inputsSMS.SMSText;
                 _context.Add(sendSMS);
                 await _context.SaveChangesAsync();
                 TempData["success"] = "SMS was sent successfully";
                 return RedirectToAction(nameof(Index));
             }
         }
-        return View(sendSMS);
+        return View(inputsSMS);
     }
 }

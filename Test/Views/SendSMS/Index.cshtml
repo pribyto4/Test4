@@ -5,7 +5,7 @@
 
 @Html.ValidationSummary(true)
 
-@model SendSMS
+@model InputsSMS
 <form id="sendSMS" name="sendSMSForm" method="GET" onsubmit="process(event)">
 	<div class="border p-3 mt-4">
 		<div class="row pb-2">
@@ -19,6 +19,8 @@
 			<div class="text-danger">@Html.ValidationMessage("NumberParseException")</div>
 
 			<input class="form-control" style="display: none;" id="JSInput" /> @*in JSInput will be Phone Number before converting*@
+			<input asp-for="JSInput" class="form-control" id="JSInputCopy" type="hidden" /> @*for filling JSInput after failed validation*@
+			<input asp-for="JSInputCounteryCode" class="form-control" id="JSInputCounteryCodeCopy" type="hidden" /> @*for filling JSInput after failed validation*@
 			<div class="text-success valid-msg" style="display: none;"></div>
 			<div class="text-danger error-msg" style="display: none;"></div>
 		</div>
@@ -31,7 +33,7 @@
 	</div>
 </form>
 <h3>
-<div class="text-success valid-msg" style="width: 100%">@TempData["success"]</div>
+	<div class="text-success valid-msg" style="width: 100%">@TempData["success"]</div>
 </h3>
 
 @section scripts{
@@ -41,18 +43,25 @@
 		const PhoneNumberInput = document.querySelector("#PhoneNumberInput");
 
 		JSInput.style.display = "";
-		PhoneNumberInput.type = "hidden";
+		//PhoneNumberInput.type = "hidden";
+		document.getElementById("JSInput").value = document.getElementById("JSInputCopy").value;
 	}
 
 	setViewForJS();
 
-	const iti = phoneInput("JSInput", "valid-msg", "error-msg");
+	let country = "cz";
+	if (document.getElementById("JSInputCounteryCodeCopy").value != "") {
+		country = document.getElementById("JSInputCounteryCodeCopy").value;
+	}
+	const iti = phoneInput("JSInput", "valid-msg", "error-msg", country);
 
 	function process(event) {
 		event.preventDefault();
 		if (iti.isValidNumber()) {
 			const phoneNumber = iti.getNumber();
 			document.getElementById("PhoneNumberInput").value = phoneNumber;
+			document.getElementById("JSInputCopy").value = document.getElementById("JSInput").value;
+			document.getElementById("JSInputCounteryCodeCopy").value = iti.getSelectedCountryData().iso2;
 			document.sendSMSForm.submit();
 		}
 	}

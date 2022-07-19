@@ -11,7 +11,7 @@ using Test.Data;
 namespace Test.Migrations
 {
     [DbContext(typeof(SMSContext))]
-    [Migration("20220718234628_InitialCreate")]
+    [Migration("20220719202544_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -33,8 +33,8 @@ namespace Test.Migrations
 
                     b.Property<string>("PhoneNumber")
                         .IsRequired()
-                        .HasMaxLength(16)
-                        .HasColumnType("varchar(16)");
+                        .HasMaxLength(25)
+                        .HasColumnType("varchar(25)");
 
                     b.Property<string>("SMSText")
                         .IsRequired()
